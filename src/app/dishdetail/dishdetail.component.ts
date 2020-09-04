@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Dish } from '../shared/dish';
+
 
 const DISH = {
   id: '0',
@@ -49,10 +51,10 @@ const DISH = {
   styleUrls: ['./dishdetail.component.scss']
 })
 export class DishdetailComponent implements OnInit {
-
-  dish=DISH
-  comments=DISH.comments
-  constructor() { }
+    @Input()
+    dish: Dish; 
+    comments=DISH.comments
+    constructor() { }
 
   ngOnInit() {
   }
